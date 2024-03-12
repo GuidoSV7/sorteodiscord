@@ -1,0 +1,13 @@
+version: '3'
+services:
+  distritosieteDB:
+    image: postgres:15.3
+    container_name: sorteoweb-db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
