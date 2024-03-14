@@ -17,12 +17,28 @@ model Rol {
 
 model User {
   id        Int        @id @default(autoincrement())
-  name      String
-  email     String     
-  password  String
+  username      String
+  idDiscord     String     
   idrol    Int
   createdAt DateTime   @default(now())  
   Rol       Rol        @relation(fields: [idrol], references: [id])
   
 }
+
+model Sorteo {
+  id        Int        @id @default(autoincrement())
+  name      String
+  date     DateTime     
+  
+}
+
+model Participan{
+    id        Int        @id @default(autoincrement())
+    idUser    Int
+    idSorteo  Int
+    winner  Boolean
+}
+
+
+
 
